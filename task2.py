@@ -16,7 +16,6 @@ for i in range(0, 10000):
     param = 1 / np.mean(rands)
     y = np.append(y, param)
 
-
 plt.plot(x, y)
 plt.axline((0, theta), (1, theta), color='r')
 plt.title('theta consistency')
