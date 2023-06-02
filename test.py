@@ -2,14 +2,7 @@ import numpy as np
 import pandas as pd
 import scipy.stats as stats
 
-vals = [
-    np.random.normal(size=50).tolist(),
-    np.random.normal(size=500).tolist(),
-    np.random.normal(size=10000).tolist()
-]
-
-# for i in range(0, 3):
-#     print(vals[i])
+vals = [np.random.normal(size=50).tolist(), np.random.normal(size=500).tolist(), np.random.normal(size=10000).tolist()]
 
 deviation = lambda x: (x - m) ** 2
 
@@ -35,7 +28,7 @@ for i in range(0, len(vals)):
     lower_bound = m - delta
     print(f'{n}: [{lower_bound}, {upper_bound}]')
 
-print('For Deviation without Expected Value')
+print('For Variety without Expected Value')
 for i in range(0, len(vals)):
     s = np.array(vals[i])
     n = np.size(s)
@@ -46,7 +39,7 @@ for i in range(0, len(vals)):
     lower_bound = n * d / stats.chi2.ppf(1 - (1 - 0.025), n)
     print(f'{n}: [{lower_bound}, {upper_bound}]')
 
-print('For Deviation with Expected Value')
+print('For Variety with Expected Value')
 for i in range(0, len(vals)):
     s = np.array(vals[i])
     n = np.size(s)
